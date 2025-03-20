@@ -61,7 +61,7 @@ function App() {
 
   const handleCellDrag = (sourceRow: number, sourceCol: number, targetRow: number, targetCol: number) => {
 
-    if (checkSame(grid[targetRow][targetCol], grid[sourceRow][sourceCol])){
+    if (checkSame(grid[targetRow][targetCol], grid[sourceRow][sourceCol]) && targetRow !== sourceRow && targetCol !== sourceCol){
       if (grid[sourceRow][sourceCol] == tile11){
         handleCellUpdate(targetRow, targetCol, tile12);
         handleCellUpdate(sourceRow, sourceCol, '');
